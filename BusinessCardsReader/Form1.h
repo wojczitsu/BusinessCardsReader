@@ -1,12 +1,11 @@
 #pragma once
 
-#include <opencv2/highgui/highgui.hpp>
-using namespace cv;
+
 using namespace std;
 
-
+#include "image_processing.h"
 namespace BusinessCardsReader {
-
+	
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -17,6 +16,7 @@ namespace BusinessCardsReader {
 	/// <summary>
 	/// Summary for Form1
 	/// </summary>
+
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
 	public:
@@ -94,18 +94,8 @@ namespace BusinessCardsReader {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-
-		Mat im = imread("c:/2.JPG");
-			if (im.empty()) 
-			{
-        
-			}
-    
-			imshow("Image", im);
- 
-
-
-			 }
+			getContours("c:/card.JPG");	
+		}
 	};
 }
 
