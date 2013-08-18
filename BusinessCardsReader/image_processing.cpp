@@ -1,7 +1,4 @@
 #include "stdafx.h"
-#include "image_processing.h"
-
- 
 
 void extractContours(Mat& image,vector< vector<Point> > contours_poly){
         //Sort contorus by x value going from left to right

@@ -1,9 +1,5 @@
 #pragma once
 
-
-using namespace std;
-
-#include "image_processing.h"
 namespace BusinessCardsReader {
 	
 	using namespace System;
@@ -94,7 +90,47 @@ namespace BusinessCardsReader {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-			getContours("c:/card.JPG");	
+			//getContours("c:/card.JPG");	
+			
+			// przyklad uzycia
+			double inputA [] = {	// 20 x 20 px
+				0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,
+				0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,1,1,0,0,0,
+				0,0,0,0,0,0,0,0,1,1,1,1,0,1,1,1,1,0,0,0,
+				0,0,0,0,0,0,0,0,1,1,1,0,0,1,1,1,1,0,0,0,
+				0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,1,1,0,0,0,
+				0,0,0,0,0,0,0,1,1,1,0,0,0,0,1,1,1,0,0,0,
+				0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,0,0,0,
+				0,0,0,0,0,1,1,1,1,0,0,0,0,0,1,1,1,1,0,0,
+				0,0,0,0,0,1,1,1,1,0,0,0,0,0,1,1,1,1,0,0,
+				0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,
+				0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,
+				0,0,0,1,1,1,1,0,0,0,0,1,0,0,1,1,1,1,0,0,
+				0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,
+				0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,
+				0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,
+				0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,
+				1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0
+			}; 
+
+			try {
+				neuralNetwork nn(400,250,64, "../Data/w2.acc67.5808.mse.0.0042963.csv" );
+
+				string A = nn.parseResultToString(nn.feedForwardPatternAndGetResult(inputA));
+
+			}
+			catch (string ex) {
+				// zlapie wyjatek jesli:
+				//	- nie bedzie mogl otworzyc pliku ;
+				//	- ilosc wag w otwartym pliku nie bedzie sie zgadzac z liczba neuronow w utworzonej sieci
+				;
+			}
+
+
+
 		}
 	};
 }

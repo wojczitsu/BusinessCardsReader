@@ -1,21 +1,7 @@
+#ifndef ImageProcessing
+#define ImageProcessing
+
 #include "stdafx.h"
-#include <iostream>
- 
-#include <Windows.h>
- 
- 
-
-#include <opencv\cv.h>
-//#include "highgui.h"
-#include <opencv\ml.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <opencv2/highgui/highgui.hpp>
- 
-using namespace std;
-using namespace cv;
-
 
 class comparator{
 public:
@@ -33,3 +19,4 @@ void extractContours(Mat& image,vector< vector<Point> > contours_poly);
  
 void getContours(const char* filename);
 
+#endif
