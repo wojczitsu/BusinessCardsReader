@@ -1,7 +1,11 @@
 #pragma once
 
-namespace BusinessCardsReader {
 
+using namespace std;
+
+#include "image_processing.h"
+namespace BusinessCardsReader {
+	
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -12,6 +16,7 @@ namespace BusinessCardsReader {
 	/// <summary>
 	/// Summary for Form1
 	/// </summary>
+
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
 	public:
@@ -34,6 +39,9 @@ namespace BusinessCardsReader {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Button^  button1;
+	protected: 
+	private: System::Windows::Forms::PictureBox^  pictureBox1;
 
 	private:
 		/// <summary>
@@ -48,13 +56,46 @@ namespace BusinessCardsReader {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"Form1";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
+			this->SuspendLayout();
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(332, 169);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(117, 79);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Location = System::Drawing::Point(14, 44);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(264, 279);
+			this->pictureBox1->TabIndex = 1;
+			this->pictureBox1->TabStop = false;
+			// 
+			// Form1
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(492, 371);
+			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->button1);
+			this->Name = L"Form1";
+			this->Text = L"Form1";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+			getContours("c:/card.JPG");	
+		}
 	};
 }
 
