@@ -62,7 +62,7 @@ neuralNetwork::~neuralNetwork() {
 }
 
 //ladowanie wag z pliku .csv
-void neuralNetwork::loadWeights(char * fileName) {
+void neuralNetwork::loadWeights(char * fileName) throw(string) {
 
 	fstream inputFile;
 	inputFile.open(fileName, ios::in);

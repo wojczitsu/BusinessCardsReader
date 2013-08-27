@@ -74,7 +74,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dataReader.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="neuralNetwork.cpp" />
+    <ClCompile Include="trainer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dataReader.h" />
+    <ClInclude Include="neuralNetwork.h" />
+    <ClInclude Include="trainer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

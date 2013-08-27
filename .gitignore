@@ -21,6 +21,7 @@ Thumbs.db
 *.suo
 *.opensdf
 /Debug
+[Ii]pch*/
 [Bb]in
 [Dd]ebug*/
 *.lib

@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 
-public class neuralNetwork {
+class neuralNetwork {
 
 private: 
 	// ilosc neuronow w danej warstwie
