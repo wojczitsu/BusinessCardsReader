@@ -42,6 +42,8 @@ namespace BusinessCardsReader {
 	private: System::Windows::Forms::Button^  button1;
 	protected: 
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
+	private: System::Windows::Forms::TextBox^  textBox1;
+	private: System::Windows::Forms::Button^  button2;
 
 	private:
 		/// <summary>
@@ -58,43 +60,65 @@ namespace BusinessCardsReader {
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(332, 169);
+			this->button1->Location = System::Drawing::Point(272, 399);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(117, 79);
+			this->button1->Size = System::Drawing::Size(113, 32);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"button1";
+			this->button1->Text = L"Skanuj";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Location = System::Drawing::Point(14, 44);
+			this->pictureBox1->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->pictureBox1->Location = System::Drawing::Point(29, 69);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(264, 279);
+			this->pictureBox1->Size = System::Drawing::Size(534, 309);
 			this->pictureBox1->TabIndex = 1;
 			this->pictureBox1->TabStop = false;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(56, 30);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(303, 20);
+			this->textBox1->TabIndex = 2;
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(382, 30);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(105, 23);
+			this->button2->TabIndex = 3;
+			this->button2->Text = L"Przegl¹daj";
+			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(492, 371);
+			this->ClientSize = System::Drawing::Size(599, 443);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->button1);
 			this->Name = L"Form1";
 			this->Text = L"Form1";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-			getContours("c:/card.JPG");	
+			getContours("c:/trudne.JPG");	
 		}
 	};
 }

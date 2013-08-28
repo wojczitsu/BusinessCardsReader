@@ -48,8 +48,11 @@ void getContours(const char* filename)
 	  cv::Mat tmp;
 	  cv::GaussianBlur(img, tmp, cv::Size(25,25), 25);
 	  cv::addWeighted(img, 1.5, tmp, -0.5, 0, img);
+	  
 	  adaptiveThreshold(img, img,255,CV_ADAPTIVE_THRESH_MEAN_C, CV_THRESH_BINARY,55,60);
+	  
 	  cv::bitwise_not(img, img);
+	  
 
 
 
