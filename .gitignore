@@ -21,6 +21,10 @@ Thumbs.db
 *.suo
 *.opensdf
 /Debug
+<<<<<<< HEAD
+=======
+[Ii]pch*/
+>>>>>>> 6719ff02b42b0b497bf91b2977e986f2dd7b37cf
 [Bb]in
 [Dd]ebug*/
 *.lib
